@@ -76,15 +76,9 @@ WSGI_APPLICATION = 'ntnu.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME':  'ntnu' ,    #os.path.join(BASE_DIR, 'db.sqlite3'),
-        'OPTIONS': {                              #添加嚴格命令，增加數據完整性
-            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
-        },
-        'USER': 'root',         #mysql帳號
-        'PASSWORD': '000000', #mysql密碼
-        'HOST': '127.0.0.1',
-        'PORT': '3306',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME':  os.path.join(BASE_DIR, 'db.sqlite3'),
+        
     }
 }
 
