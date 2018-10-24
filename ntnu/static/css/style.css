@@ -1,0 +1,73 @@
+#logo {
+  text-align: center;
+  background-color: #D7FDEC;
+  padding: 1em 0;
+  height: 130px;
+}
+#logo img {
+  vertical-align: middle;
+}
+#logo span {
+  vertical-align: middle;
+  font-size: 2em;
+  margin-left: .2em;
+  font-family: Arial;
+}
+
+#log{
+	vertical-align : middle;
+	text-align: center;
+	font-size: 20px;
+}
+#welcome{
+   font-size: 8px;
+  text-align: right;
+}
+.{
+
+	background-color: white;
+}
+body {
+  background-color:ADADAD;
+}
+/*HEADER {
+  margin:0 auto;
+  width:900px;
+  height:131px;
+  background-image:url(images/top.jpg);
+}*/
+/*#Header{
+　width:360px;
+　height:80px;
+　text-align:center;
+　line-height:80px;
+　font-size:15px;
+　color:#fffaf3;
+　font-weight:bold;
+　background-color:#f9c81e;
+}*/
+#side{
+    width: 20%;
+    min-height: 800px;
+    background-color: #f0f;
+    float: left;
+    /*step01___加上這一行，nav3d向前浮動導致main向上*/
+
+} 
+#content{
+    width: 80%;
+    min-height: 800px;
+    background-color: #0ff;
+    float: left;
+    /*step02___main跟nav都浮動靠左是ok的只要尺寸剛好，但如果太大版面就會跑掉*/
+    /*margin-left:200px;*/
+    /*step04___使用margin-left做兩欄排版，不用float，
+      這個方法的好處是如果改變wrap寬度，並把main的width不設因為他是block屬性會自動填滿*/
+}
+#footer{
+    /*結果step03____當nav與main都浮動向前時，footer就會跑上去*/
+    min-height: 50px;
+    background-color: #333;
+    clear: both;
+    /*step05___清除左右兩邊浮動*/
+}

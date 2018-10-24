@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>AP controller</title>
+    {% load staticfiles %}
+    <link href="{% static "css/style.css" %}" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+    <div class="pos-f-t">
+      <nav class="navbar navbar-dark bg-dark">
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <a class="navbar-brand" style="color: white;">
+          <span ><i class="fa fa-wifi"></i><b> AP controller</b></span>
+          <ul class="nav navbar-nav">
+            <li><a data-toggle="tab"><span style="color: white;">wellcome {{name}}</span></a></li>
+            <li><a data-toggle="tab" ><a class="fa fa-sign-out-alt" href="/logout/" style="font-size: 15px"> Log out</a></a></li>
+          </ul>
+        </a>
+      </nav>
+    </div>
+ 
+       <nav class="navbar navbar-light bg-light">
+          <a class="navbar-brand" href="/index/">          
+                <i class="fa fa-home"></i> Home
+          </a>
+          <form class="form-inline">
+
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </nav>
+      
+    
+      <div class="list-group list-group-flush" style="width: 300px">
+        <a href="/addAP/" class="list-group-item list-group-item-action">新增AP</a>
+        <a href="#" class="list-group-item list-group-item-action">刪除AP</a>
+        <a href="#" class="list-group-item list-group-item-action">aaa</a>
+        <a href="#" class="list-group-item list-group-item-action">aaa</a>
+        <a href="#" class="list-group-item list-group-item-action">aaa</a>
+        <a href="#" class="list-group-item list-group-item-action">aaa</a>
+        <a href="#" class="list-group-item list-group-item-action">aaa</a>
+        <a href="#" class="list-group-item list-group-item-action">aaa</a>
+        <a href="#" class="list-group-item list-group-item-action">aaa</a>
+        <a href="#" class="list-group-item list-group-item-action">aaa</a>
+      </div>
+      
+    </div>
+</body>
+</html>
