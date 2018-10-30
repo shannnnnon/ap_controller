@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>AP controller</title>
+    {% load staticfiles %}
+    <link href="{% static "css/style.css" %}" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <!-- css------------------------------- -->
+    <style>
+    * {
+        font-family: 微軟正黑體;
+        /*border: solid 1px;*/
+    }
+    .list, .mid{
+/*        display: inline-block;
+        margin-top: 0px;*/
+        position: absolute;
+    }
+    .list{
+        letter-spacing: 2px;
+        font-size: 17px;
+        width: 230px;
+    }
+    .mid{
+        margin-left: 250px;
+        margin-top: 20px;
+    }
+    .form-horizontal{
+        width: 400px;
+        margin-top: 50px;
+    }
+    </style>
+</head>
+<!-- ----------------------------------------- -->
+<body>
+  <!-- 上面 -->
+    <div class="pos-f-t">
+      <nav class="navbar navbar-dark bg-dark">
+        <!-- <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button> -->
+        
+        <a class="navbar-brand" style="color: white;">
+          <span><i class="fa fa-wifi"></i><b> AP controller</b></span>
+          
+         {% if request.user.is_authenticated %}
+          <ul class="nav navbar-nav">
+            <li>
+              <a data-toggle="tab">
+                <span style="color: white">wellcome {{name}} !</span>
+              </a>
+              <a href="/logout/" class="btn btn-info btn-lg" style="height: 42px;font-size: 17px;margin: 0px 5px 10px 20px">
+                <span class="fa fa-sign-out"></span> Log out
+              </a>
+            </li>
+          </ul>
+          {% endif %}
+
+        </a>
+      </nav>
+    </div>
+
+      {% if request.user.is_authenticated %}
+      <nav aria-label="breadcrumb" style="height: 50px;">
+        <ol class="breadcrumb" style="height: 50px;">
+          <li class="breadcrumb-item active" aria-current="page"><i class="fa fa-home" style="font-size:20px"></i> Home</li>
+        </ol>
+      </nav>
+
+      <!-- <nav class="navbar navbar-light bg-light">
+          <a class="navbar-brand" href="/index/">          
+                <i class="fa fa-home"></i> Home
+          </a>
+          <form class="form-inline">
+
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </nav> -->
+      
+  <!-- 功能列表----------------------------------------------- -->
+  
+    <div class="list">
+      <div class="list-group list-group-flush">
+
+        <a href="/dashboard/" class="list-group-item list-group-item-action"><i class="fa fa-tachometer" style="font-size:20px"></i>　儀錶板</a>
+        <a href="/ap/" class="list-group-item list-group-item-action"><i class="fa fa-share-alt" style="font-size:20px"></i>　ＡＰ狀態</a>
+        <a href="/users/" class="list-group-item list-group-item-action"><i class="fa fa-user" style="font-size:20px"></i>　使用者管理</a>
+        <a href="/message/" class="list-group-item list-group-item-action"><i class="fa fa-envelope" style="font-size:20px"></i>　訊息</a>
+        <a href="/system/" class="list-group-item list-group-item-action"><i class="fa fa-cog" style="font-size:20px"></i>　系統工具</a>
+        <!-- ----- -->
+        <!-- <a class="list-group-item list-group-item-action" data-toggle="collapse" href="#collapseAP"><i class="fa fa-share-alt" style="font-size:20px"></i> ＡＰ狀態　　　　<i class="fa fa-angle-double-down" style="font-size:20px;"></i></a>
+        
+        <div class="collapse" id="collapseAP">
+          <div class="card">
+            <a href="#" class="list-group-item list-group-item-action">　　<i class="fa fa-plus-square" style="font-size:20px;color: #67C3C9"></i> 新增AP</a>
+            <a href="#" class="list-group-item list-group-item-action">　　<i class="fa fa-minus-square" style="font-size:20px;color: #67C3C9"></i> 刪除AP</a>
+            <a href="#" class="list-group-item list-group-item-action">　　<i class="fa fa-search" style="font-size:20px;color: #67C3C9"></i> 查詢AP</a>
+          </div>
+        </div> -->
+        <!-- ----- -->
+        <!-- <a class="list-group-item list-group-item-action" data-toggle="collapse" href="#collapseUser"><i class="fa fa-user" style="font-size:20px"></i> 使用者管理　　　 <i class="fa fa-angle-double-down" style="font-size:20px;"></i></a>
+
+        <div class="collapse" id="collapseUser">
+          <div class="card">
+            <a href="#" class="list-group-item list-group-item-action">　　<i class="fa fa-minus-square" style="font-size:20px;color: #67C3C9"></i> 刪除使用者</a>
+            <a href="#" class="list-group-item list-group-item-action">　　<i class="fa fa-search" style="font-size:20px;color: #67C3C9"></i> 查詢使用者</a>
+          </div>
+        </div> -->
+        <!-- ----- -->
+        <!-- <a href="#" class="list-group-item list-group-item-action"><i class="fa fa-envelope" style="font-size:20px"></i> 訊息</a> -->
+        <!-- ----- -->
+        <!-- <a class="list-group-item list-group-item-action" data-toggle="collapse" href="#collapseSystem"><i class="fa fa-cog" style="font-size:20px"></i> 系統工具　　　　 <i class="fa fa-angle-double-down" style="font-size:20px;"></i></a>
+
+        <div class="collapse" id="collapseSystem">
+          <div class="card">
+            <a href="#" class="list-group-item list-group-item-action">　　<i class="fa fa-drivers-license" style="font-size:20px;color: #67C3C9"></i> 管理者資料</a>
+            <a href="#" class="list-group-item list-group-item-action">　　<i class=" fa fa-wrench" style="font-size:20px;color: #67C3C9"></i> 設定</a>
+          </div>
+        </div> -->
+        <!-- <a href="#" class="list-group-item list-group-item-action">aaa</a> -->
+
+      </div>
+    </div>
+
+  <!-- 中間--------------------------------------------------------- -->
+    <div class="mid" >
+      <h1>這裡是主頁</h1>
+
+      
+    </div>
+
+
+  <!-- 登入-------------------------------------------------------- -->
+      {% else %}
+      <div class="d-flex justify-content-center" >
+        <form class="form-horizontal" action="." method="POST" name="form1"　>
+           {% csrf_token %}
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="username">帳號:</label>
+            <div class="col-sm-10">
+              <input type="username" name="username" class="form-control" id="username" placeholder="Enter account">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="password">密碼:</label>
+            <div class="col-sm-10"> 
+              <input type="password" class="form-control" name="password" id="password" placeholder="Enter password">
+            </div>
+          </div>
+          <div class="form-group"> 
+            <div class="col-sm-offset-2 col-sm-10">
+              <div class="d-flex justify-content-center">
+                <button type="submit" name="button" id="button" class="btn btn-default"style="margin-top:20px;">送出</button>
+              </div>
+            </div>
+            <div class="col-sm-offset-2 col-sm-10">
+              <div class="d-flex justify-content-center">
+              <span style="color:red;margin-top:40px;font-size: 25px">{{message}}</span>
+            </div>
+            
+          </div>
+        </form>
+      </div>
+      {% endif %}
+      
+   
+</body>
+</html>

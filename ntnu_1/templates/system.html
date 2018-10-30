@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>AP controller</title>
+    {% load staticfiles %}
+    <link href="{% static "css/style.css" %}" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <!-- css------------------------------- -->
+    <style>
+    * {
+        font-family: 微軟正黑體;
+        /*border: solid 1px;*/
+    }
+    .list, .mid{
+        position: absolute;
+    }
+    .list{
+        letter-spacing: 2px;
+        font-size: 17px;
+        width: 230px;
+    }
+    .mid{
+        margin-left: 250px;
+        margin-top: 20px;
+    }
+    </style>
+</head>
+<!-- ----------------------------------------- -->
+<body>
+  <!-- 上面 -->
+    <div class="pos-f-t">
+      <nav class="navbar navbar-dark bg-dark">
+        
+        <a class="navbar-brand" style="color: white;">
+          <span ><i class="fa fa-wifi"></i><b> AP controller</b></span>
+          <ul class="nav navbar-nav">
+            <li>
+              <a data-toggle="tab">
+                <span style="color: white">wellcome {{name}} !</span>
+              </a>
+              <a href="/logout/" class="btn btn-info btn-lg" style="height: 42px;font-size: 17px;margin: 0px 5px 10px 20px">
+                <span class="fa fa-sign-out"></span> Log out
+              </a>
+            </li>
+          </ul>
+        </a>
+      </nav>
+    </div>
+
+      <nav aria-label="breadcrumb" style="height: 50px;">
+        <ol class="breadcrumb" style="height: 50px;">
+          <li class="breadcrumb-item"><a href="/index/"><i class="fa fa-home"></i> Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">系統工具</li>
+        </ol>
+      </nav>
+      
+  <!-- 功能列表----------------------------------------------- -->
+
+    <div class="list">
+      <div class="list-group list-group-flush">
+
+        <a href="/dashboard/" class="list-group-item list-group-item-action"><i class="fa fa-tachometer" style="font-size:20px"></i>　儀錶板</a>
+        <a href="/ap/" class="list-group-item list-group-item-action"><i class="fa fa-share-alt" style="font-size:20px"></i>　ＡＰ狀態</a>
+        <a href="/users/" class="list-group-item list-group-item-action"><i class="fa fa-user" style="font-size:20px"></i>　使用者管理</a>
+        <a href="/message/" class="list-group-item list-group-item-action"><i class="fa fa-envelope" style="font-size:20px"></i>　訊息</a>
+        <a href="/system/" class="list-group-item list-group-item-action" style="background-color: #D4F1FA"><i class="fa fa-cog" style="font-size:20px"></i>　系統工具</a>
+            <!-- <a href="#" class="list-group-item list-group-item-action">　　<i class="fa fa-drivers-license" style="font-size:20px;color: #67C3C9"></i> 管理者資料</a> -->
+            <a href="#" class="list-group-item list-group-item-action">　　<i class=" fa fa-wrench" style="font-size:20px;color: #67C3C9"></i> 設定</a>
+            <a href="#" class="list-group-item list-group-item-action">　　<i class=" fa fa-refresh" style="font-size:20px;color: #67C3C9"></i> 一鍵更新</a>
+
+      </div>
+    </div>
+
+  <!-- 中間--------------------------------------------------------- -->
+    <div class="mid" >
+      <h1>這裡是Controller/Admin基本資料</h1>
+
+      
+    </div>
+
+
+
+</body>
+</html>
